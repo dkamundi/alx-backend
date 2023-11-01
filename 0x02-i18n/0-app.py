@@ -10,8 +10,14 @@ app = Flask(__name__)
 
 
 @app.route('/')
-def index():
-    return render_template('index.htmk')
+def hello_world():
+    ello_world():
+    """
+    returns a html template that prints
+    `Welcome to Holberton` as a title
+    and `Hello world`as a header
+    """
+    return render_template('index.html')
 
 
 if __name__ == '__main__':
