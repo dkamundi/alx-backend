@@ -6,7 +6,7 @@ from flask import Flask, render_template
 from flask_babel import Babel
 
 
-app = flask(__name)
+app = flask(__name__)
 babel = Babel(app)
 
 
@@ -23,7 +23,7 @@ class Config(object):
 app.config.from_object(Config)
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def hello_world():
     return render_template('1-index.html')
 
