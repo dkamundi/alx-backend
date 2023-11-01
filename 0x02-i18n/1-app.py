@@ -25,6 +25,11 @@ app.config.from_object(Config)
 
 @app.route('/', strict_slashes=False)
 def hello_world():
+    """
+    returns a html template that prints
+    `Welcome to Holberton` as a title
+    and `Hello world`as a header
+    """
     return render_template('1-index.html')
 
 
