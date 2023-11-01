@@ -9,6 +9,9 @@ app = Flask(__name__)
 babel = Babel(app)
 
 class Config:
+    """
+    Defines a class with a LANGUAGES class attribute equal to ["en", "fr"]
+    """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -17,10 +20,18 @@ app.config.from_object(Config)
 
 @app.route('/')
 def hello_world():
+    """
+    returns a html template that prints
+    `Welcome to Holberton` as a title
+    and `Hello world`as a header
+    """
     return render_template('2-index.html')
 
 @babel.localeselector
 def get_locale():
+    """
+    determine the best match with our supported languages.
+    """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 if __name__ == '__main__':
