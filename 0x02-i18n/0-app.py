@@ -17,7 +17,7 @@ def hello_world():
     `Welcome to Holberton` as a title
     and `Hello world`as a header
     """
-    return render_template('index.html')
+    return render_template('0-index.html')
 
 
 if __name__ == '__main__':
