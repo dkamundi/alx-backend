@@ -7,12 +7,14 @@ from flask_babel import Babel
 
 
 app = flask(__name)
-
-
 babel = Babel(app)
 
 
-class Config:
+class Config(object):
+    """
+    Defines a class with a LANGUAGES class attribute equal to ["en", "fr"]
+    """
+
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -22,7 +24,7 @@ app.config.from_object(Config)
 
 
 @app.route('/')
-def index():
+def hello_world():
     return render_template('1-index.html')
 
 
